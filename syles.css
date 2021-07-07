@@ -1,0 +1,43 @@
+:root {
+    --muave: #BF8E97;
+    --blue: #024059;
+    --white: #F2EBDC;
+    --light-orange: #F2D0A7;
+    --dark-orange: #F2AA6B;
+}
+
+.nav-wrapper {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+#search-card {
+    background-color: var(--light-orange);
+    opacity: 50%;
+}
+
+.card-title {
+    color: var(--blue);
+}
+
+.card {
+    background-color: var(--light-orange);
+    opacity: 50%;
+}
+
+#card-title {
+    color: var(--blue);
+}
+
+
+#search-btn {
+    background-color: var(--muave);
+}
+
+.materialize-textarea {
+    background-color: #BF8E97;
+}
+
+#wish-list-btn {
+    background-color: var(--muave);
+}
