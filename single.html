@@ -28,9 +28,11 @@
     <div class="col s12 m6">
       <div class="card">
         <div class="card-image">
-            <!-- this is where the map will go -->
-       
-          <span class="card-title" id="card-title">Map graphic</span>
+            
+          <!-- this is where the map will go -->
+           <span class="card-title" id="card-title">Map graphic</span>
+          <!--The div element for the map -->
+          <div id="map"></div>
           <!-- add to wishlist btn? -->
           <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
         </div>
@@ -91,8 +93,17 @@
       </div>
     </div>
   </div>
-<!-- <script src="./assets/birdscript.js"></script> -->
-<script src="./assets/js/pageLoad.js"></script>
-</body>
 
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <script src="./assets/js/birdscript.js"></script>
+  <script src="./assets/js/maps.js"></script>
+  <script src="./assets/js/pageLoad.js"></script>
+
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALjN6cG-Hsi2pG8bFO32AvxrNW57olP3s&callback=initMap&libraries=&v=weekly"
+      async></script>
+
+</body>
 </html>
