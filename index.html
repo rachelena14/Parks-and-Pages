@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./syles.css">
     <title>Beak Buddy</title>
@@ -30,28 +30,25 @@
             <p>
             <div class="row">
                 <!-- form -->
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <i class="material-icons prefix"></i>
-                            <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                            <label for="icon_prefix2">Zip Code</label>
-                        </div>
-                    </div>
-                </form>
+                <div class="ui-widget">
+                    <label for="tags">Enter your state here: </label>
+                    <input id="tags">
+                </div>
+                <!-- button -->
+                <div class="card-action">
+                    <a class="waves-effect waves-light btn" id="search-btn"><i
+                            class="material-icons left">cloud</i>Search</a>
+                </div>
             </div>
-            </p>
-        </div>
-        <!-- button -->
-        <div class="card-action">
-            <a class="waves-effect waves-light btn" id="search-btn"><i class="material-icons left">cloud</i>Search</a>
         </div>
     </div>
-</div>
-</div>
 
-<body>
-    <script src="./script.js"></script>
-</body>
+    <body>
+    
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="./script.js"></script>
+        <script src="./auto.js"></script>
+    </body>
 
 </html>
