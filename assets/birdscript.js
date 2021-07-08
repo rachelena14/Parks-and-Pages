@@ -17,7 +17,6 @@ fetch("https://api.ebird.org/v2/data/obs/KZ/recent", requestOptions)
   .then(result => console.log(result))
   .catch(error => console.log('error', error))
   
-  
   //this will save the searched birds to local storage
   if (birds.indexOf(birdSearch) === -1) {
     birds.push(birdSearch);//push each search to localstorage "birds" array
