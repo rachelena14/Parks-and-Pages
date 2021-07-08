@@ -20,36 +20,41 @@
         </ul>
     </div>
 </nav>
+
 <body>
-<!-- card -->
+    <!-- card -->
 
-<div class="col s12 m6">
-    <div class="card" id="search-card">
-        <div class="card-content white-text">
-            <span class="card-title">Parks and Birds Near You</span>
-            <p>
-            <div class="row">
+    <div class="col s12 m6">
+        <div class="card" id="search-card">
+            <div class="card-content white-text">
+                <span class="card-title">Parks and Birds Near You</span>
+                <p>
+                <div class="row">
 
-                <!-- form -->
-                <div class="ui-widget">
-                    <label for="tags">Enter your state here: </label>
-                    <input id="tags">
+                    <!-- form -->
+                    <div class="ui-widget">
+                        <label for="tags">Enter your state here: </label>
+                        <input id="tags">
+                    </div>
+                    <!-- button -->
+                    <div class="card-action">
+                        <a class="waves-effect waves-light btn" id="search-btn"><i
+                                class="material-icons left">cloud</i>Search</a>
+                    </div>
+                    
                 </div>
-                <!-- button -->
-                <div class="card-action">
-                    <a class="waves-effect waves-light btn" id="search-btn"><i
-                            class="material-icons left">cloud</i>Search</a>
-                </div>
-
             </div>
         </div>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="./auto.js"></script>
-    <script src="./assets/birdscript.js"></script>
-    <script src="./parkscript.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="./auto.js"></script>
+        <script src="./assets/js/birdscript.js"></script>
+        <script src="./assets/js/maps.js"></script>
+        <script src="./assets/js/parkscript.js"></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALjN6cG-Hsi2pG8bFO32AvxrNW57olP3s&callback=initMap&libraries=&v=weekly"
+            async></script>
 </body>
 
 </html>

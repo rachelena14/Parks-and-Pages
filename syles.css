@@ -60,3 +60,7 @@
 #wish-list-btn {
     background-color: var(--muave);
 }
+
+#map {
+    height: 400px;
+}
