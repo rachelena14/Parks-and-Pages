@@ -18,3 +18,4 @@ fetch("https://api.ebird.org/v2/data/obs/KZ/recent", requestOptions)
   .then(result => console.log(result))
   .catch(error => console.log('error', error))
   ;
+  console.log("hello");
