@@ -1,4 +1,3 @@
-
 //API Key to request information from eBird API
 var apiKey = "k9s1kdn0ee6g";
 
@@ -18,4 +17,4 @@ fetch("https://api.ebird.org/v2/data/obs/KZ/recent", requestOptions)
   .then(result => console.log(result))
   .catch(error => console.log('error', error))
   ;
-  console.log("hello");
+
