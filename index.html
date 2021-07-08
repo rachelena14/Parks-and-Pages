@@ -29,27 +29,26 @@
             <span class="card-title">Parks and Birds Near You</span>
             <p>
             <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <i class="material-icons prefix"></i>
-                            <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                            <label for="icon_prefix2">Zip Code</label>
-                        </div>
-                    </div>
-                </form>
+
+                <!-- form -->
+                <div class="ui-widget">
+                    <label for="tags">Enter your state here: </label>
+                    <input id="tags">
+                </div>
+                <!-- button -->
+                <div class="card-action">
+                    <a class="waves-effect waves-light btn" id="search-btn"><i
+                            class="material-icons left">cloud</i>Search</a>
+                </div>
+
             </div>
-            </p>
-        </div>
-        <!-- button -->
-        <div class="card-action">
-            <a class="waves-effect waves-light btn" id="search-btn"><i class="material-icons left">cloud</i>Search</a>
         </div>
     </div>
-</div>
-</div>
 
 <body>
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="./auto.js"></script>
     <script src="./assets/birdscript.js"></script>
     <script src="./parkscript.js"></script>
 </body>
