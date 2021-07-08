@@ -1,22 +1,12 @@
 //HTML hooks
-var searchButton = document.querySelector(".searchBtn");
-var stateCode = "AK";
+var searchButton = document.querySelector("#search-btn");
 
 //API key and URL saved to variables
 var apiKey = "Qf6SFqPGtrc0kdbIEzRDhmmEwqcd7bmuzohPeeam";
-var queryUrl = "https://developer.nps.gov/api/v1/parks?q=" + stateCode + "&api_key=" + apiKey;
-
-//searches Parks using input search value
-function search() {
-  //lowercase trimmed search input value
-  var stateValue = document.querySelector("#search-val").value.trim().toLowerCase();
-  //calls data fetch
-  getParkData(stateValue);
-}
 
 //fetches park data
-function getParkData() {
-
+function getParkData(stateName) {
+  var queryUrl = "https://developer.nps.gov/api/v1/parks?q=" + stateName + "&api_key=" + apiKey;
   //fetches data from URL
   fetch(queryUrl)
     .then(function (response) {
@@ -25,80 +15,25 @@ function getParkData() {
         //converts to JSON
         response.json()
           .then(function (parks) {
-            //logs put data
+            //logs park data
             console.log(parks);
-            //console.log(parks.data[0].addresses[0].postalCode);
-            $( function() {
-              var stateCodes = [
-                "AK",
-                "AL",
-                "AZ",
-                "AR",
-                "CA",
-                "CO",
-                "CT",
-                "DE",
-                "FL",
-                "GA",
-                "HI",
-                "ID",
-                "IL",
-                "IN",
-                "IA",
-                "KS",
-                "KY",
-                "LA",
-                "ME",
-                "MD",
-                "MA",
-                "MI",
-                "MN",
-                "MS",
-                "MO",
-                "MT",
-                "NE",
-                "NV",
-                "NH",
-                "NJ",
-                "NM",
-                "NY",
-                "NC",
-                "ND",
-                "OH",
-                "OK",
-                "OR",
-                "PA",
-                "RI",
-                "SC",
-                "SD",
-                "TN",
-                "TX",
-                "UT",
-                "VT",
-                "VA",
-                "WA",
-                "WV",
-                "WI",
-                "WY",
-                "Scheme"
-              ];
-              $( "#states" ).autocomplete({
-                source: stateCodes
-              });
-            } );
+            //grabs parks by state code
           });
       }
     })
+    //catches errors
     .catch(function (error) {
       console.log(error);
     });
-
 }
 //search button click
-// searchButton.addEventListener('click', search());
+searchButton.addEventListener('click', function (event) {
+  // var stateName = event.target.value;
+  var stateName = document.querySelector("#tags").value;
+  getParkData(stateName);
+})
 
-// document.addEventListener('DOMContentLoaded', function () {
-//   var elems = document.querySelectorAll('select');
-//   var instances = M.FormSelect.init(elems, options);
-// });
+function displayParks() {
+  parkInfo.innerHTML = parks.data
 
+}
