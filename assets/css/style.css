@@ -16,6 +16,21 @@
     opacity: 50%;
 }
 
+/* autocomplete drop down  */
+.ui-autocomplete {
+    border: solid 1px var(--muave);
+    padding: 5px;
+    border-radius: 5px;
+    background: lightgray;
+    max-width: 20%;
+    
+    
+}
+
+.ui-autocomplete.source:hover {
+    background: rgb(218, 214, 214);
+}
+
 .card-title {
     color: var(--blue);
 }
@@ -29,6 +44,10 @@
     color: var(--blue);
 }
 
+/* hidden loggin for form? */
+.ui-helper-hidden-accessible {
+    display: none;
+}
 
 #search-btn {
     background-color: var(--muave);
@@ -40,4 +59,8 @@
 
 #wish-list-btn {
     background-color: var(--muave);
+}
+
+#map {
+    height: 400px;
 }
