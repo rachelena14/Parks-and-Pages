@@ -6,5 +6,5 @@ var searchButton = document.querySelector("#search-btn");
     var stateName = document.querySelector("#tags").value;
     localStorage.setItem("state", stateName);
     //gets weather from button value
-  
+  console.log(stateName, "state name");
 })

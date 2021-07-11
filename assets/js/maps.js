@@ -1,3 +1,4 @@
+
 var lat = JSON.parse(localStorage.getItem("latitude"));
 var long = JSON.parse(localStorage.getItem("longitude"));
 
@@ -14,7 +15,7 @@ for (let index = 0; index < lat.length; index++) {
 
 // Initialize and add the map
 function initMap() {
-
+console.log(locations);
     //generate map, and set center to the first coordinate pair in our results
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 5,
