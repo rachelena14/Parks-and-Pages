@@ -67,15 +67,24 @@
 
 .tileId {
     height: 150px;
-    width: 300px;
+    width: calc(50% - 1rem);
     background-size: cover;
     background-position: center;   
+    margin-bottom: 1rem;
     
 }
 
 .flex-box{
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     padding: 3%;
+    justify-content: space-around;
+}
+
+#books {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
 }
