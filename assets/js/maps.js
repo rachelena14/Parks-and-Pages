@@ -1,4 +1,3 @@
-
 var lat = JSON.parse(localStorage.getItem("latitude"));
 var long = JSON.parse(localStorage.getItem("longitude"));
 
@@ -30,3 +29,4 @@ function initMap() {
         });
     }
 }
+

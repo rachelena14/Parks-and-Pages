@@ -20,11 +20,11 @@ function getParkData(stateName){
             response.json()
             .then(function(parks) {
        
-             
             for (var i = 0; i < parks.data.length; i++){
         
               lat.push(parks.data[i].latitude);
               lon.push(parks.data[i].longitude);
+
            }
             
 
