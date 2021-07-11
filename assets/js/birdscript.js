@@ -22,6 +22,9 @@ if (birds.indexOf(birdSearch) === -1) {
 }
 ;
 
+// function getLocName(){
+//     var locName = 
+// }
 function getLatLon() {
   var lat = localStorage.getItem("latitude");
   var lon = localStorage.getItem("longitude");

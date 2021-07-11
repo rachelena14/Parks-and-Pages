@@ -1,3 +1,5 @@
+var parkInfoEl = document.getElementById('park-info')
+
 var apiKey = "Qf6SFqPGtrc0kdbIEzRDhmmEwqcd7bmuzohPeeam";
       var lat = [];
               var lon = []; 
@@ -10,7 +12,7 @@ function storageGet(){
 
 function getParkData(stateName){
 
-    var queryUrl = "https://developer.nps.gov/api/v1/parks?q=" + stateName + "&api_key=" + apiKey;
+    var queryUrl = "https://developer.nps.gov/api/v1/parks?stateCode=" + stateName + "&api_key=" + apiKey;
       //fetches data from URL
     fetch(queryUrl)
         .then(function (response) {
@@ -19,19 +21,51 @@ function getParkData(stateName){
             //converts to JSON
             response.json()
             .then(function(parks) {
-       
+              
+              console.log('PARKS OBJECT --> ', parks.data)
+
+              var parksArray = parks.data.map(el => {
+                return {
+                  fullName: el.fullName,
+                  latitude: el.latitude,
+                  longitude: el.longitude,
+                  images: el.images
+                }
+              })
+
+               console.log(parksArray);
+  
+               parksArray.forEach(el => {
+
+                var tile = document.createElement('article');
+                
+                tile.className = 'tile';
+                tile.setAttribute("id", tileId);
+                if(el.images[0]){
+                  tile.style.backgroundImage = 'url(' + el.images[0].url + ')'
+                }
+                tile.textContent = el.fullName || 'Unknown'
+                tile.style.color = 'white'
+                tile.style.fontWeight = 'bolder';
+
+                parkInfoEl.appendChild(tile)
+
+              })
+
+
+
              
             for (var i = 0; i < parks.data.length; i++){
         
-              lat.push(parks.data[i].latitude);
-              lon.push(parks.data[i].longitude);
+              lat.push(JSON.stringify(parks.data[i].latitude));
+              lon.push(JSON.stringify(parks.data[i].longitude));
 
               //console.log(lat);
               //console.log(lon);
            }
-           
-            localStorage.setItem("latitude", lat);
-            localStorage.setItem("longitude", lon);
+
+            localStorage.setItem("latitude", JSON.stringify(lat));
+            localStorage.setItem("longitude", JSON.stringify(lon));
               //displayParks(parks);
               
               //logs park data

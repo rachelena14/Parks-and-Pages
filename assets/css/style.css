@@ -13,7 +13,6 @@
 
 #search-card {
     background-color: var(--light-orange);
-    opacity: 50%;
 }
 
 /* autocomplete drop down  */
@@ -37,7 +36,7 @@
 
 .card {
     background-color: var(--light-orange);
-    opacity: 50%;
+ 
 }
 
 #card-title {
@@ -63,4 +62,20 @@
 
 #map {
     height: 400px;
+}
+
+
+.tile {
+    height: 150px;
+    width: 300px;
+    background-size: cover;
+    background-position: center;   
+    
+}
+
+.flex-box{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3%;
 }
