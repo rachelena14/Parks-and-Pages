@@ -1,7 +1,3 @@
-// //API Key to request information from eBird API
-// var apiKey = "k9s1kdn0ee6g";
-// var myHeaders = new Headers();
-// // var birds = [];
 
 // //once array or obj is made, lines 7 & 8 will need || [] 
 // var lat = localStorage.getItem("latitude") || []
@@ -102,7 +98,6 @@
 //"https://www.googleapis.com/books/v1/volumes?q="
 
 // "http://books.google.com/books/content?id=fiawoQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-
 
 
 
