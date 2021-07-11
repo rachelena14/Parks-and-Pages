@@ -1,49 +1,4 @@
 
-// //once array or obj is made, lines 7 & 8 will need || [] 
-// var lat = localStorage.getItem("latitude") || []
-// var lng = localStorage.getItem("longitude") || []
-// console.log(lat, lng);
-
-// myHeaders.append("X-eBirdApiToken", "k9s1kdn0ee6g");
-// var requestOptions = {
-//   method: 'GET',
-//   headers: myHeaders,
-//   redirect: 'follow'
-// };
-
-// fetch("https://api.ebird.org/v2/data/obs/KZ/recent", requestOptions)
-
-//   .then(response => response.json())
-//   .then(result => console.log(result))
-//   .catch(error => console.log('error', error))
-//   ;
-
-
-// function getregSpecies() {
-//   var locId = "L6208778";
-//   var speciesCode = "cangoo";
-//   fetch("https://api.ebird.org/v2/data/obs/" + locId + "/recent/" + speciesCode)
-//   .then(response => response.json())
-//   .then(result => console.log(result))
-//   .catch(error => console.log('error', error))
-//   ;
-// }
-// getregSpecies();
-
-// // getLatLon(lat, lng) {
-
-// //   var reqUrl = "https://api.ebird.org/v2/data/obs/geo/recent?lat=" + lat + "&lng=" + lng + "&sort=species";
-// //   fetch(reqUrl, requestOptions)
-// //   .then(function (response) {
-// //     //if 200 comes back, go on
-// //     if (response.ok) {
-// //       //converts to JSON
-// //       response.json()
-// //       .then(function(response) {
-// //     console.log(response);
-// //       });
-// //   }})
-// // getLatLon(43.53, 79.45);
 
 
 //remind Rachel P to set local storage item to park-name
@@ -85,9 +40,7 @@
 //     displayBooks(books.volumeInfo.thumbnail);
 // }
 
-// var card = $("<div>").addClass("book-card")
-// $(card).append(parkBooks)
-// $("#book-graphic").append(card);
+
 
 //dot notation to target image:
 // volumeInfo
@@ -99,14 +52,12 @@
 
 // "http://books.google.com/books/content?id=fiawoQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
 
-
-//this is what we did with Dan on Fri
-
-var parkName = localStorage.getItem("parkName")
+var bookInfoEl = document.getElementById("book-info");
+// var parkName = localStorage.getItem("parkName");
 console.log(parkName);
-// var parkName = ["Glacier National Park", "Yosemite National Park", "Everglades National Park", "Yellowstone National Park"];
+var parkName = ["Glacier National Park", "Yosemite National Park", "Everglades National Park", "Yellowstone National Park"];
 var apiKey = "AIzaSyBuygcz55NZNqqdLiTsxPF25wxml-ImFVw";
-function getBooks() {
+function getBooks(parkName) {
     for (let i = 0; i < parkName.length; i++) {
         var reqUrl = "https://www.googleapis.com/books/v1/volumes?q=" + parkName[i] + "&" + apiKey;
         fetch(reqUrl)
@@ -114,24 +65,43 @@ function getBooks() {
                 return response.json();
             })
             .then(function (parkBooks) {
-                console.log(parkBooks.items[i]);
+                console.log("park books", parkBooks.items[i]);
                 displayBooks(parkBooks.items);
-                var booksArray = parkBooks.data.map(el => {
-                    return {
-                        title: el.title,
-                        description: el.description,
-                        images: el.thumbnail
-                    }
-                })
-                console.log("map of books", booksArray);
-            }
-            )};
-    getBooks();
-    //use this function to append three books per park to the page
-    //need to dynamically create a header
-    function displayBooks(books) {
-        console.log(books);
-        for (let i = 0; i < 3; i++) {
-            console.log(books[i]);
-        }
-}}
+            })
+    }
+};
+getBooks(parkName);
+//use this function to append three books per park to the page
+//need to dynamically create a header
+function displayBooks(books) {
+    console.log("searched books", books);
+    for (let i = 0; i < 3; i++) {
+        console.log("3 books", books);
+        console.log("book titles", books.books[i].volumeInfo.title)
+        var card = $("<div>").addClass("book-card")
+        console.log(parkBooks.title);
+        $(card).append(books.title)
+        bookTitle = $(volumeInfo.title).text();
+
+        $("#book-info").append(card);
+    }
+}
+
+    //     var booksArray = parkBooks.map(el => {
+    //         return {
+    //             title: el.title,
+    //             description: el.description,
+    //             images: el.thumbnail
+    //         }
+    //     })
+    //     console.log("map of books", booksArray);
+
+    // booksArray.forEach(el => {
+    //     var bookTile = document.createElement('article');
+
+    //     bookTile.className = "bookTile";
+    //     bookTile.setAttribute("class", "bookTileId");
+    //     bookTile.textContent = el.title;
+    //     bookInfoEl.appendChild(bookTile);
+    // })}
+
