@@ -101,7 +101,6 @@
 
 
 
-
 //this is what we did with Dan on Fri
 
 // var parkName = JSON.parse(localStorage.getItem("park-name"))
