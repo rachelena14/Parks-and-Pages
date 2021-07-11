@@ -10,7 +10,6 @@ function storageGet(){
    getParkData(searchInput);
 }
 
-
 function getParkData(stateName){
 
     var queryUrl = "https://developer.nps.gov/api/v1/parks?stateCode=" + stateName + "&api_key=" + apiKey;
@@ -41,7 +40,7 @@ function getParkData(stateName){
                 var tile = document.createElement('article');
                 
                 tile.className = 'tile';
-                tile.setAttribute("id", tileId);
+                tile.setAttribute("class", "tileId");
                 if(el.images[0]){
                   tile.style.backgroundImage = 'url(' + el.images[0].url + ')'
                 }
@@ -54,15 +53,15 @@ function getParkData(stateName){
               })
 
             for (var i = 0; i < parks.data.length; i++){
-              parkNameArray.push(JSON.stringify(parks.data[i].fullName));
-              lat.push(JSON.stringify(parks.data[i].latitude));
-              lon.push(JSON.stringify(parks.data[i].longitude));
+              parkNameArray.push(parks.data[i].fullName);
+              lat.push(parks.data[i].latitude);
+              lon.push(parks.data[i].longitude);
 
            }
 
               // console.log(lat);
               // console.log(lon);
-           
+           console.log(parkNameArray);
             localStorage.setItem("parkName", JSON.stringify(parkNameArray));
             localStorage.setItem("latitude", JSON.stringify(lat));
             localStorage.setItem("longitude", JSON.stringify(lon));

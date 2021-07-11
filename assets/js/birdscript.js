@@ -100,11 +100,11 @@
 // "http://books.google.com/books/content?id=fiawoQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
 
 
-
 //this is what we did with Dan on Fri
 
-// var parkName = JSON.parse(localStorage.getItem("park-name"))
-var parkName = ["Glacier National Park", "Yosemite National Park", "Everglades National Park", "Yellowstone National Park"];
+var parkName = localStorage.getItem("parkName")
+console.log(parkName);
+// var parkName = ["Glacier National Park", "Yosemite National Park", "Everglades National Park", "Yellowstone National Park"];
 var apiKey = "AIzaSyBuygcz55NZNqqdLiTsxPF25wxml-ImFVw";
 function getBooks() {
     for (let i = 0; i < parkName.length; i++) {
@@ -133,6 +133,5 @@ function getBooks() {
         console.log(books);
         for (let i = 0; i < 3; i++) {
             console.log(books[i]);
-
         }
 }}
