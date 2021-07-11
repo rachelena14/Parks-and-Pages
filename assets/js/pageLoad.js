@@ -20,18 +20,16 @@ function getParkData(stateName){
             response.json()
             .then(function(parks) {
        
-             
             for (var i = 0; i < parks.data.length; i++){
         
               lat.push(parks.data[i].latitude);
               lon.push(parks.data[i].longitude);
-
               //console.log(lat);
               //console.log(lon);
            }
            
-            localStorage.setItem("latitude", lat);
-            localStorage.setItem("longitude", lon);
+            localStorage.setItem("latitude", JSON.stringify(lat));
+            localStorage.setItem("longitude", JSON.stringify(lon));
               //displayParks(parks);
               
               //logs park data
