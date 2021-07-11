@@ -2,7 +2,8 @@ var parkInfoEl = document.getElementById('park-info')
 
 var apiKey = "Qf6SFqPGtrc0kdbIEzRDhmmEwqcd7bmuzohPeeam";
       var lat = [];
-              var lon = []; 
+      var lon = []; 
+      var parkNameArray = [];
 function storageGet(){
    var searchInput = localStorage.getItem("state");
    console.log(searchInput);
@@ -21,7 +22,7 @@ function getParkData(stateName){
             //converts to JSON
             response.json()
             .then(function(parks) {
-              
+
               console.log('PARKS OBJECT --> ', parks.data)
 
               var parksArray = parks.data.map(el => {
@@ -52,18 +53,17 @@ function getParkData(stateName){
 
               })
 
-
-
-             
             for (var i = 0; i < parks.data.length; i++){
-        
+              parkNameArray.push(JSON.stringify(parks.data[i].fullName));
               lat.push(JSON.stringify(parks.data[i].latitude));
               lon.push(JSON.stringify(parks.data[i].longitude));
 
-              //console.log(lat);
-              //console.log(lon);
            }
 
+              // console.log(lat);
+              // console.log(lon);
+           
+            localStorage.setItem("parkName", JSON.stringify(parkNameArray));
             localStorage.setItem("latitude", JSON.stringify(lat));
             localStorage.setItem("longitude", JSON.stringify(lon));
               //displayParks(parks);

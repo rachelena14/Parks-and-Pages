@@ -1,18 +1,32 @@
-localStorage.getItem("lagtitude", lat);
-localStorage.getItem("longitude", lon)
+var lat = JSON.parse(localStorage.getItem("latitude"));
+var long = JSON.parse(localStorage.getItem("longitude"));
+
+/* 
+set locations as empty array, and then loop through the localstorage and match each lat/lon into arrays 
+
+Note: use parseFloat to retain decimal points for coordinates 
+*/
+
+var locations = [];
+for (let index = 0; index < lat.length; index++) {
+    locations.push([parseFloat(lat[index]), parseFloat(long[index])])
+}
 
 // Initialize and add the map
 function initMap() {
-    // The location of Uluru
-    const uluru = { lat: -25.344, lng: 131.036 };
-    // The map, centered at Uluru
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 4,
-      center: uluru,
+
+    //generate map, and set center to the first coordinate pair in our results
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 5,
+        center: new google.maps.LatLng(locations[0][0], locations[0][1]),
     });
-    // The marker, positioned at Uluru
-    const marker = new google.maps.Marker({
-      position: uluru,
-      map: map,
-    });
-  }
+
+    //loop through our coordinate pairs and create a marker for each one 
+    for (i = 0; i < locations.length; i++) {
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][0], locations[i][1]),
+            map: map
+        });
+    }
+}
+
