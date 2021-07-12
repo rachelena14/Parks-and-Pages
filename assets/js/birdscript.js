@@ -30,13 +30,16 @@ function getBooks() {
             button.textContent = "Add to Favorites";
             title.textContent = parkBooks.items[i].volumeInfo.title;
             bookCard.append(title);
+
             // not all book returns have images and or desc so this checks to make sure there is one before adding to page
+
             if (parkBooks.items[i].volumeInfo.imageLinks.thumbnail) {
               button.setAttribute("data-image", parkBooks.items[i].volumeInfo.imageLinks.thumbnail);
               var image = document.createElement("img");
               var imageSrc = parkBooks.items[i].volumeInfo.imageLinks.thumbnail;
               image.setAttribute("src", imageSrc);
               bookCard.append(image);
+              
             }
 
             if (parkBooks.items[i].volumeInfo.description) {
@@ -44,6 +47,7 @@ function getBooks() {
               var description = document.createElement("p");
               description.textContent = parkBooks.items[i].volumeInfo.description;
               bookCard.append(description);
+              
             }
 
             // add to favorites button and append the whole card to page
@@ -51,11 +55,13 @@ function getBooks() {
             bookCard.append(button);
             booksEl.append(bookCard);
 
+         }
+
           }
 
-        }
+       
       }
-      )
+         )
   };
 }
 // function that saves books
@@ -86,5 +92,6 @@ function saveBook(event) {
   localStorage.setItem("favorite-books", JSON.stringify(favorites));
 }
 
-getBooks();
+getBooks(); 
+
 
