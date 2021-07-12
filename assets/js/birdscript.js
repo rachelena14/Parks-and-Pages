@@ -1,7 +1,9 @@
+
 var booksEl = document.getElementById("books");
 var parkName = JSON.parse(localStorage.getItem("parkName"));
 // var parkName = ["Glacier National Park", "Yosemite National Park", "Everglades National Park", "Yellowstone National Park"];
 var apiKey = "AIzaSyBuygcz55NZNqqdLiTsxPF25wxml-ImFVw";
+
 
 function getBooks() {
   // console.log("hello");
@@ -47,12 +49,6 @@ function getBooks() {
               bookCard.append(description);
               
             }
-// button.addEventListener('click', function(event){
-//          var newBook = event.target.value;
-//          console.log("new book:", newBook);
-//          localStorage.set("title", newBook.items[0].volumeInfo.title);
-//          localStorage.set("image", newBook.items[0].volumeInfo.imageLinks.thumbnail);
-//          localStorage.set("desc", newBook.items[0].volumeInfo.description);})
 
             bookCard.append(button);
             booksEl.append(bookCard);
@@ -68,4 +64,5 @@ function getBooks() {
 }
 
 getBooks(); 
+
 
