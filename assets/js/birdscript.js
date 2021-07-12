@@ -21,11 +21,17 @@ function getBooks() {
           // get first three results for each park
           for (let i = 0; i < 3; i++) {
             // create cards with book info and append to page
+            //creates new div
             var bookCard = document.createElement("div");
+            //sets class to create columns
             bookCard.setAttribute("class", "s6 col books");
+            //creates header variable
             var title = document.createElement("h6");
+            //creates button
             var button = document.createElement("button");
+            //styles button
             button.setAttribute("class", "btn-floating waves-effect waves-light red saveBtn");
+            //sets title 
             button.setAttribute("data-title", parkBooks.items[i].volumeInfo.title);
             button.textContent = "Add to Favorites";
             title.textContent = parkBooks.items[i].volumeInfo.title;
@@ -73,20 +79,22 @@ function saveBook(event) {
     }
   }
 
-  // get book info from click event, and create an object for each seperate book
+  // get book info from add button, and create an object for each seperate book
   var bookTitle = event.target.getAttribute("data-title");
   var bookDesc = event.target.getAttribute("data-desc");
   var bookImg = event.target.getAttribute("data-image");
+  //book object
   var bookObj = {
     "title": bookTitle,
     "desc": bookDesc,
     "img": bookImg
   }
-
+//pushes entire book object to array
   favorites.push(bookObj);
-
+//sets local storage to stringified array
   localStorage.setItem("favorite-books", JSON.stringify(favorites));
 }
 
+//gets books
 getBooks();
 
