@@ -13,98 +13,103 @@
 <nav>
     <!-- creates wrapper for nav bar -->
     <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Parks & Pages</a>
-        <!-- stylizes for mobile -->
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <!-- links in nav bar -->
-           <!-- links to favorite books page -->
-            <li><a href="badges.html">Favorite Books</a></li>
-        </ul>
+        <div class="container">
+            <a href="#" class="brand-logo">Parks & Pages</a>
+            <!-- stylizes for mobile -->
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <!-- links in nav bar -->
+
+                <!-- links to favorite books page -->
+                <li><a href="favoritebooks.html">Favorite Books</a></li>
+            </ul>
+        </div>
     </div>
 </nav>
 
 <body>
     <!-- card -->
-<!-- creates columns -->
+    <!-- creates columns -->
     <div class="col s12 m6">
-        <!-- creates cards using materialize -->
-        <div class="card" id="search-card">
-            <div class="card-content white-text">
-                <span class="card-title">Parks and Books Near You</span>
-                <p>
-                <div class="row">
+        <div class="container">
+            <!-- creates cards using materialize -->
+            <div class="card" id="search-card">
+                <div class="card-content white-text">
+                    <span class="card-title">Parks and Books Near You</span>
+                    <p>
+                    <div class="row">
 
-                <!-- form -->
-               <!-- drop down to select state -->
-                <label>State Picker</label>
-                <select id="tags" class="browser-default">
-                <option value="" disabled selected>Choose your state</option>
-                <option value="AK">Alaska</option>
-                <option value="AL">Alabama</option>
-                <option value="AR">Arkansas</option>
-                <option value="AZ">Arizona</option>
-                <option value="CA">California</option>
-                <option value="CO">Colorado</option>
-                <option value="CT">Connecticut</option>
-                <option value="DC">Washington DC</option>
-                <option value="DE">Delaware</option>
-                <option value="FL">Florida</option>
-                <option value="GA">Georgia</option>
-                <option value="HI">Hawaii</option>
-                <option value="IA">Iowa</option>
-                <option value="ID">Idaho</option>
-                <option value="IL">Illinois</option>
-                <option value="AL">Indiana</option>
-                <option value="KS">Kansas</option>
-                <option value="KY">Kentucky</option>
-                <option value="LA">Louisiana</option>
-                <option value="MA">Massachusetts</option>
-                <option value="MD">Maryland</option>
-                <option value="ME">Maine</option>
-                <option value="MN">Minnesota</option>
-                <option value="MO">Missouri</option>
-                <option value="MS">Mississippi</option>
-                <option value="MT">Montana</option>
-                <option value="NC">North Carolina</option>
-                <option value="ND">North Dakota</option>
-                <option value="NE">Nebraska</option>
-                <option value="NH">New Hampshire</option>
-                <option value="NJ">New Jersey</option>
-                <option value="NM">New Mexico</option>
-                <option value="NV">Nevada</option>
-                <option value="NY">New York</option>
-                <option value="OH">Ohio</option>
-                <option value="OK">Oklahoma</option>
-                <option value="OR">Oregon</option>
-                <option value="PA">Pennsylvania</option>
-                <option value="RI">Rhode Island</option>
-                <option value="SC">South Carolina</option>
-                <option value="SD">South Dakota</option>
-                <option value=“TN”>Tennessee</option>
-                <option value=“TX”>Texas</option>
-                <option value="UT">Utah</option>
-                <option value="VA">Virginia</option>
-                <option value="VT">Vermont</option>
-                <option value="WA">Washington</option>
-                <option value="WI">Wisconsin</option>
-                <option value="WV">West Virginia</option>
-                <option value="WY">Wyoming</option>
-  </select>
-                </div>
-                <!-- button to move on to next page -->
-                <div class="card-action">
-                    <a class="waves-effect waves-light btn" id="search-btn" href="single.html"><i
-                            class="material-icons left">cloud</i>Search</a>
+                        <!-- form -->
+                        <!-- drop down to select state -->
+                        <label>State Picker</label>
+                        <select id="tags" class="browser-default">
+                            <option value="" disabled selected>Choose your state</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DC">Washington DC</option>
+                            <option value="DE">Delaware</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="IA">Iowa</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="AL">Indiana</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MD">Maryland</option>
+                            <option value="ME">Maine</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MT">Montana</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NY">New York</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value=“TN”>Tennessee</option>
+                            <option value=“TX”>Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VA">Virginia</option>
+                            <option value="VT">Vermont</option>
+                            <option value="WA">Washington</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    </div>
+                    <!-- button to move on to next page -->
+                    <div class="card-action">
+                        <a class="waves-effect waves-light btn" id="search-btn" href="single.html">Search</a>
+                    </div>
                 </div>
             </div>
         </div>
-<!-- links -->
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="./assets/js/auto.js"></script>
-        <script src="./assets/js/birdscript.js"></script>
-        <script src="./assets/js/parkscript.js"></script>
-        
+    </div>
+    <!-- links -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="./assets/js/auto.js"></script>
+    <script src="./assets/js/birdscript.js"></script>
+    <script src="./assets/js/parkscript.js"></script>
+
 </body>
 
 </html>

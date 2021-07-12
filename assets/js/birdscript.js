@@ -22,8 +22,8 @@ function getBooks() {
           for (let i = 0; i < 3; i++) {
             // create cards with book info and append to page
             var bookCard = document.createElement("div");
-            bookCard.setAttribute("class", "s6 col");
-            var title = document.createElement("h4");
+            bookCard.setAttribute("class", "s6 col books");
+            var title = document.createElement("h6");
             var button = document.createElement("button");
             button.setAttribute("class", "btn-floating waves-effect waves-light red saveBtn");
             button.setAttribute("data-title", parkBooks.items[i].volumeInfo.title);

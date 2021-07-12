@@ -6,6 +6,10 @@
     --dark-orange: #F2AA6B;
 }
 
+nav {
+    margin-bottom: 4rem;
+}
+
 .nav-wrapper {
     background-color: var(--blue);
     color: var(--white);
