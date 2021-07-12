@@ -7,7 +7,7 @@ set locations as empty array, and then loop through the localstorage and match e
 
 Note: use parseFloat to retain decimal points for coordinates 
 */
-setTimeout(initMap, 50000);
+
 var locations = [];
 for (let index = 0; index < lat.length; index++) {
     locations.push([parseFloat(lat[index]), parseFloat(long[index])])
