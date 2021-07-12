@@ -1,7 +1,9 @@
+
 var booksEl = document.getElementById("books");
 var parkName = JSON.parse(localStorage.getItem("parkName"));
 // var parkName = ["Glacier National Park", "Yosemite National Park", "Everglades National Park", "Yellowstone National Park"];
 var apiKey = "AIzaSyBuygcz55NZNqqdLiTsxPF25wxml-ImFVw";
+
 
 function getBooks() {
   // console.log("hello");
@@ -57,3 +59,4 @@ function getBooks() {
 }
 
 getBooks();
+
