@@ -11,20 +11,23 @@
 </head>
 <!-- nav bar -->
 <nav>
+    <!-- creates wrapper for nav bar -->
     <div class="nav-wrapper">
         <a href="#" class="brand-logo">Parks & Pages</a>
+        <!-- stylizes for mobile -->
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <!-- links in nav bar -->
-            <li><a href="sass.html">Park Activites</a></li>
-            <li><a href="badges.html">Birding</a></li>
+           <!-- links to favorite books page -->
+            <li><a href="badges.html">Favorite Books</a></li>
         </ul>
     </div>
 </nav>
 
 <body>
     <!-- card -->
-
+<!-- creates columns -->
     <div class="col s12 m6">
+        <!-- creates cards using materialize -->
         <div class="card" id="search-card">
             <div class="card-content white-text">
                 <span class="card-title">Parks and Books Near You</span>
@@ -32,7 +35,7 @@
                 <div class="row">
 
                 <!-- form -->
-               
+               <!-- drop down to select state -->
                 <label>State Picker</label>
                 <select id="tags" class="browser-default">
                 <option value="" disabled selected>Choose your state</option>
@@ -87,18 +90,15 @@
                 <option value="WV">West Virginia</option>
                 <option value="WY">Wyoming</option>
   </select>
-                <!-- <div class="ui-widget">
-                    <label for="tags">Enter your state here: </label>
-                    <input id="tags"> -->
                 </div>
-                <!-- button -->
+                <!-- button to move on to next page -->
                 <div class="card-action">
                     <a class="waves-effect waves-light btn" id="search-btn" href="single.html"><i
                             class="material-icons left">cloud</i>Search</a>
                 </div>
             </div>
         </div>
-
+<!-- links -->
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="./assets/js/auto.js"></script>
