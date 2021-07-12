@@ -1,13 +1,12 @@
 
 var booksEl = document.getElementById("books");
 var parkName = JSON.parse(localStorage.getItem("parkName"));
-// var parkName = ["Glacier National Park", "Yosemite National Park", "Everglades National Park", "Yellowstone National Park"];
 var apiKey = "AIzaSyBuygcz55NZNqqdLiTsxPF25wxml-ImFVw";
 
 
 function getBooks() {
-  // console.log("hello");
 
+  // loop through parknames and search for books that contain park name
   for (let i = 0; i < parkName.length; i++) {
 
     var reqUrl = "https://www.googleapis.com/books/v1/volumes?q=" + parkName[i] + "&" + apiKey;
@@ -17,21 +16,22 @@ function getBooks() {
         return response.json();
       })
       .then(function (parkBooks) {
-        console.log(parkName[i]);
+        //  if there are results then continue
         if (parkBooks.items) {
-
+          // get first three results for each park
           for (let i = 0; i < 3; i++) {
-
+            // create cards with book info and append to page
             var bookCard = document.createElement("div");
-            bookCard.setAttribute("class", "s6 col");
-            var title = document.createElement("h4");
+            bookCard.setAttribute("class", "s6 col books");
+            var title = document.createElement("h6");
             var button = document.createElement("button");
             button.setAttribute("class", "btn-floating waves-effect waves-light red saveBtn");
             button.setAttribute("data-title", parkBooks.items[i].volumeInfo.title);
             button.textContent = "Add to Favorites";
             title.textContent = parkBooks.items[i].volumeInfo.title;
             bookCard.append(title);
-            
+
+            // not all book returns have images and or desc so this checks to make sure there is one before adding to page
 
             if (parkBooks.items[i].volumeInfo.imageLinks.thumbnail) {
               button.setAttribute("data-image", parkBooks.items[i].volumeInfo.imageLinks.thumbnail);
@@ -39,30 +39,54 @@ function getBooks() {
               var imageSrc = parkBooks.items[i].volumeInfo.imageLinks.thumbnail;
               image.setAttribute("src", imageSrc);
               bookCard.append(image);
-              
             }
-            
+
             if (parkBooks.items[i].volumeInfo.description) {
               button.setAttribute("data-desc", parkBooks.items[i].volumeInfo.description);
               var description = document.createElement("p");
               description.textContent = parkBooks.items[i].volumeInfo.description;
               bookCard.append(description);
-              
             }
 
+            // add to favorites button and append the whole card to page
+            button.addEventListener("click", saveBook);
             bookCard.append(button);
             booksEl.append(bookCard);
 
-         }
-
           }
 
-       
+        }
       }
-         )
+      )
   };
 }
+// function that saves books
+function saveBook(event) {
+  event.preventDefault();
+  // add empty array for saved books to be stored
+  var favorites = [];
+  // first check to see if there are any previously saved books, if there are add them to array
+  var storedBooks = JSON.parse(localStorage.getItem("favorite-books"));
+  if (storedBooks) {
+    for (let index = 0; index < storedBooks.length; index++) {
+      favorites.push(storedBooks[index]);
+    }
+  }
 
-getBooks(); 
+  // get book info from click event, and create an object for each seperate book
+  var bookTitle = event.target.getAttribute("data-title");
+  var bookDesc = event.target.getAttribute("data-desc");
+  var bookImg = event.target.getAttribute("data-image");
+  var bookObj = {
+    "title": bookTitle,
+    "desc": bookDesc,
+    "img": bookImg
+  }
 
+  favorites.push(bookObj);
+
+  localStorage.setItem("favorite-books", JSON.stringify(favorites));
+}
+
+getBooks();
 
