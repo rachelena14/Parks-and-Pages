@@ -30,7 +30,9 @@ function getBooks() {
             button.textContent = "Add to Favorites";
             title.textContent = parkBooks.items[i].volumeInfo.title;
             bookCard.append(title);
+
             // not all book returns have images and or desc so this checks to make sure there is one before adding to page
+
             if (parkBooks.items[i].volumeInfo.imageLinks.thumbnail) {
               button.setAttribute("data-image", parkBooks.items[i].volumeInfo.imageLinks.thumbnail);
               var image = document.createElement("img");
