@@ -29,6 +29,7 @@ function getBooks() {
             button.textContent = "Add to Favorites";
             title.textContent = parkBooks.items[i].volumeInfo.title;
             bookCard.append(title);
+            
 
             if (parkBooks.items[i].volumeInfo.imageLinks.thumbnail) {
               button.setAttribute("data-image", parkBooks.items[i].volumeInfo.imageLinks.thumbnail);
@@ -36,6 +37,7 @@ function getBooks() {
               var imageSrc = parkBooks.items[i].volumeInfo.imageLinks.thumbnail;
               image.setAttribute("src", imageSrc);
               bookCard.append(image);
+              
             }
             
             if (parkBooks.items[i].volumeInfo.description) {
@@ -43,17 +45,27 @@ function getBooks() {
               var description = document.createElement("p");
               description.textContent = parkBooks.items[i].volumeInfo.description;
               bookCard.append(description);
+              
             }
+// button.addEventListener('click', function(event){
+//          var newBook = event.target.value;
+//          console.log("new book:", newBook);
+//          localStorage.set("title", newBook.items[0].volumeInfo.title);
+//          localStorage.set("image", newBook.items[0].volumeInfo.imageLinks.thumbnail);
+//          localStorage.set("desc", newBook.items[0].volumeInfo.description);})
 
             bookCard.append(button);
             booksEl.append(bookCard);
 
+         }
+
           }
 
-        }
+       
       }
-      )
+         )
   };
 }
 
-getBooks();
+getBooks(); 
+
